@@ -1,14 +1,40 @@
+body {
+  background-color: var(--color-stone-100);
+
+  font-family: "Outfit", sans-serif;
+  font-size: var(--font-size-body);
+}
+
+h1,
+h2 {
+  font-family: "Young Serif", serif;
+  font-weight: var(--font-weight-bold);
+}
+
+h1 {
+  font-size: var(--font-size-heading-lg);
+}
+
+h2 {
+  font-size: var(--font-size-heading-reg);
+}
+
 .card {
   display: flex;
   flex-direction: column;
-  place-items: center;
+  align-items: stretch;
 
-  margin: auto;
+  max-width: var(--width-card-desktop);
+  width: 100%;
 
-  border-radius: var(radius-card);
-  background-color: var(color-white);
+  margin: var(--spacing-8) auto;
+  padding: var(--spacing-8);
+
+  border-radius: var(--radius-card);
+  background-color: var(--color-white);
 
   .hero-image {
-    border-radius: var(radius-hero);
+    border-radius: var(--radius-hero);
+    width: var(--width-hero-desktop);
   }
 }
