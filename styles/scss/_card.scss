@@ -3,20 +3,23 @@ body {
 
   font-family: "Outfit", sans-serif;
   font-size: var(--font-size-body);
+  color: var();
 }
 
 h1,
 h2 {
   font-family: "Young Serif", serif;
-  font-weight: var(--font-weight-bold);
 }
 
 h1 {
   font-size: var(--font-size-heading-lg);
+  font-weight: var(--font-weight-bold);
 }
 
 h2 {
   font-size: var(--font-size-heading-reg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-brown-800);
 }
 
 .card {
