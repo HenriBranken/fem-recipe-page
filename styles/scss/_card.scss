@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+
+  margin: auto;
+
+  border-radius: var(radius-card);
+  background-color: var(color-white);
+
+  .hero-image {
+    border-radius: var(radius-hero);
+  }
+}
