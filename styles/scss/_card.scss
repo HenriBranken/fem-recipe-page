@@ -11,6 +11,12 @@ body {
 }
 
 .card {
+  --multiplier-radius: calc(var(--radius-card) / var(--viewport-range));
+  --multiplier-margin: calc(var(--spacing-8) / var(--viewport-range));
+
+  --card-radius: clamp(0rem, calc(var(--availability) * var(--multiplier-radius)), var(--radius-card));
+  --card-margin: clamp(0rem, calc(var(--availability) * var(--multiplier-margin)), var(--spacing-8));
+
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -18,15 +24,25 @@ body {
   max-width: var(--width-card-desktop);
   width: 100%;
 
-  margin: var(--spacing-8) auto;
+  margin: var(--card-margin) auto;
 
-  border-radius: var(--radius-card);
+  border-radius: var(--card-radius);
   background-color: var(--color-white);
 
   .hero-image {
+    --multiplier-radius: calc(var(--radius-hero) / var(--viewport-range));
+    --multiplier-margin: calc(var(--spacing-8) / var(--viewport-range));
+
+    --hero-inline-space: clamp(0rem, calc(var(--availability) * var(--multiplier-margin)), var(--spacing-8));
+    --hero-radius: clamp(0rem, calc(var(--availability) * var(--multiplier-radius)), var(--radius-hero));
+
+    margin-inline: var(--hero-inline-space);
+    margin-block-start: var(--hero-inline-space);
+    margin-block-end: var(--spacing-8);
+
+    border-radius: var(--hero-radius);
+
     @media (min-width: 46rem) {
-      margin: var(--spacing-8);
-      border-radius: var(--radius-hero);
       max-width: var(--width-hero-desktop);
     }
   }

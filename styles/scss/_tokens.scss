@@ -55,4 +55,8 @@
   --width-bullet: 0.25rem;
   --bullet-inline-offset: 0.25rem;
   --bullet-top-offset: 0.75em;
+
+  /* viewport range */
+  --viewport-range: calc(46rem - 41rem);
+  --availability: calc(100vw - 41rem);
 }
