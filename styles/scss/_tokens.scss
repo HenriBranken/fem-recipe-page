@@ -3,12 +3,10 @@
   --color-white: hsl(0, 0%, 100%);
 
   --color-stone-100: hsl(30, 54%, 90%);
-  --color-stone-150: hsl(30, 18%, 87%);
+  // --color-stone-150: hsl(30, 18%, 87%);
   --color-stone-600: hsl(30, 10%, 34%);
   --color-stone-900: hsl(24, 5%, 18%);
-
   --color-brown-800: hsl(14, 45%, 36%);
-
   --color-rose-800: hsl(332, 51%, 32%);
   --color-rose-50: hsl(330, 100%, 98%);
 
@@ -20,7 +18,7 @@
   // font-sizes
   --font-size-body: 1rem;
   --font-size-body-mob: 0.9375rem;
-  --font-size-heading-sm: 1.25rem;
+  // --font-size-heading-sm: 1.25rem;
   --font-size-heading-reg: 1.75rem;
   --font-size-heading-md: 2rem;
   --font-size-heading-lg: 2.5rem;
@@ -34,9 +32,9 @@
   --spacing-1: 0.5rem;
   --spacing-2: 0.75rem;
   --spacing-3: 1rem;
-  --spacing-4: 1.25rem;
+  // --spacing-4: 1.25rem;
   --spacing-5: 1.5rem;
-  --spacing-6: 1.75rem;
+  // --spacing-6: 1.75rem;
   --spacing-7: 2rem;
   --spacing-8: 2.5rem;
 
@@ -45,12 +43,9 @@
   --radius-card: 1.5rem;
 
   /* Sizing */
+  --width-card-desktop: 46rem;
   --width-hero-desktop: 41rem;
   --width-hero-mobile: 23.4375rem;
-  --height-hero-desktop: 18.75rem;
-  --height-hero-mobile: 11rem;
-  --width-card-desktop: 46rem;
-  --width-card-mobile: 23.4375rem;
 
   /* List Specs */
   --width-bullet: 0.25rem;
@@ -58,9 +53,9 @@
   --bullet-top-offset: 0.75em;
 
   /* viewport range */
-  --stepdown-1: calc(46rem - 41rem);
-  --available-1: calc(100vw - 41rem);
+  --stepdown-1: calc(var(--width-card-desktop) - var(--width-hero-desktop));
+  --available-1: calc(100vw - var(--width-hero-desktop));
 
-  --stepdown-2: calc(41rem - 23.4375rem);
-  --available-2: calc(100vw - 23.4375rem);
+  --stepdown-2: calc(var(--width-hero-desktop) - var(--width-hero-mobile));
+  --available-2: calc(100vw - var(--width-hero-mobile));
 }
