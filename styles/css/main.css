@@ -92,7 +92,7 @@ select {
 
 .preparation-list li {
   position: relative;
-  padding-inline-start: calc(0.45rem + var(--spacing-3));
+  padding-inline-start: calc(var(--bullet-inline-offset) + var(--bullet-top-offset) + var(--spacing-3));
 }
 .preparation-list li + li {
   margin-block-start: var(--spacing-1);
