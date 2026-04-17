@@ -1,6 +1,7 @@
 @use "headings";
 
 body {
+  color: var(--color-stone-600);
   background-color: var(--color-stone-100);
 
   font-family: "Outfit", sans-serif;
@@ -26,7 +27,7 @@ body {
   .hero-image {
     border-radius: var(--radius-hero);
     width: var(--width-hero-desktop);
-    margin-block-end: var(--spacing-6);
+    margin-block-end: var(--spacing-7);
   }
 }
 

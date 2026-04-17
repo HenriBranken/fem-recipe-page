@@ -160,6 +160,7 @@ h2 {
 }
 
 h1 {
+  color: var(--color-stone-900);
   font-size: var(--font-size-heading-lg);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-heading);
@@ -175,6 +176,7 @@ h2 {
 }
 
 body {
+  color: var(--color-stone-600);
   background-color: var(--color-stone-100);
   font-family: "Outfit", sans-serif;
   font-size: var(--font-size-body);
@@ -195,7 +197,7 @@ body {
 .card .hero-image {
   border-radius: var(--radius-hero);
   width: var(--width-hero-desktop);
-  margin-block-end: var(--spacing-6);
+  margin-block-end: var(--spacing-7);
 }
 
 hr {
