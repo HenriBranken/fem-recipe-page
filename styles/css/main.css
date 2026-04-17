@@ -135,6 +135,25 @@ select {
   padding-inline-start: calc(var(--bullet-inline-offset) + 2ch + var(--spacing-3));
 }
 
+.nutrition-table {
+  min-width: 100%;
+  margin-block-start: var(--spacing-5);
+  border-collapse: collapse;
+}
+.nutrition-table td {
+  width: 50%;
+  padding-block: var(--spacing-2);
+}
+.nutrition-table td strong {
+  color: var(--color-brown-800);
+}
+.nutrition-table td:first-child {
+  padding-inline-start: var(--spacing-7);
+}
+.nutrition-table tr + tr td {
+  border-top: 1px var(--color-stone-100) solid;
+}
+
 h1,
 h2 {
   font-family: "Young Serif", serif;
