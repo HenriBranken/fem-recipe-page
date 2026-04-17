@@ -1,0 +1,22 @@
+h1,
+h2 {
+  font-family: "Young Serif", serif;
+}
+
+h1 {
+  font-size: var(--font-size-heading-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading);
+
+  margin-block-end: var(--spacing-5);
+}
+
+h2 {
+  font-size: var(--font-size-heading-reg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-medium);
+  
+  color: var(--color-brown-800);
+
+  margin-block-end: var(--spacing-5);
+}

@@ -20,7 +20,7 @@ figure {
   margin: 0;
 }
 
-ul {
+ul, ol {
   padding: 0;
   list-style: none;
 }
@@ -86,13 +86,6 @@ select {
   --width-card-mobile: 23.4375rem;
 }
 
-body {
-  background-color: var(--color-stone-100);
-  font-family: "Outfit", sans-serif;
-  font-size: var(--font-size-body);
-  color: var();
-}
-
 h1,
 h2 {
   font-family: "Young Serif", serif;
@@ -101,12 +94,23 @@ h2 {
 h1 {
   font-size: var(--font-size-heading-lg);
   font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading);
+  margin-block-end: var(--spacing-5);
 }
 
 h2 {
   font-size: var(--font-size-heading-reg);
   font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-medium);
   color: var(--color-brown-800);
+  margin-block-end: var(--spacing-5);
+}
+
+body {
+  background-color: var(--color-stone-100);
+  font-family: "Outfit", sans-serif;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
 }
 
 .card {
@@ -123,4 +127,11 @@ h2 {
 .card .hero-image {
   border-radius: var(--radius-hero);
   width: var(--width-hero-desktop);
+  margin-block-end: var(--spacing-6);
+}
+
+hr {
+  border-top: 1px solid var(--color-stone-600);
+  margin-block: var(--spacing-4);
+  width: 100%;
 }/*# sourceMappingURL=main.css.map */
