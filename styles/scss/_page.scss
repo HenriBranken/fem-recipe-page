@@ -1,0 +1,25 @@
+body {
+  --multiplier-fs: calc((var(--font-size-body) - var(--font-size-body-mob)) / var(--stepdown-2));
+  --body-fs: clamp(var(--font-size-body-mob), calc(var(--font-size-body-mob) + var(--available-2) * var(--multiplier-fs)), var(--font-size-body));
+
+  color: var(--color-stone-600);
+  background-color: var(--color-stone-100);
+
+  font-family: "Outfit", sans-serif;
+  font-size: var(--body-fs);
+  font-weight: var(--font-weight-regular);
+  
+  line-height: var(--line-height-body);
+}
+
+.preparation {
+  background-color: var(--color-rose-50);
+  border-radius: var(--radius-hero);
+  padding: var(--spacing-5);
+  margin: var(--spacing-5) 0;
+
+  .preparation-title {
+    color: var(--color-rose-800);
+    margin-block-end: var(--spacing-3);
+  }
+}
