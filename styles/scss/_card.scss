@@ -1,8 +1,8 @@
-@use "mixins";
+@use "functions";
 
 .card {
-  @include mixins.fluid-custom-prop("card-radius", "--radius-card", "--available-1", "--stepdown-1");
-  @include mixins.fluid-custom-prop("card-margin", "--spacing-8", "--available-1", "--stepdown-1");
+  --card-radius: #{functions.fluid("--radius-card", "--available-1", "--stepdown-1")};
+  --card-margin: #{functions.fluid("--spacing-8", "--available-1", "--stepdown-1")};
 
   display: flex;
   flex-direction: column;
@@ -17,8 +17,8 @@
   background-color: var(--color-white);
 
   .hero-image {
-    @include mixins.fluid-custom-prop("hero-inline-space", "--spacing-8", "--available-1", "--stepdown-1");
-    @include mixins.fluid-custom-prop("hero-radius", "--radius-hero", "--available-1", "--stepdown-1");
+    --hero-inline-space: #{functions.fluid("--spacing-8", "--available-1", "--stepdown-1")};
+    --hero-radius: #{functions.fluid("--radius-hero", "--available-1", "--stepdown-1")};
 
     margin-inline: var(--hero-inline-space);
     margin-block-start: var(--hero-inline-space);

@@ -163,9 +163,7 @@ h2 {
 }
 
 h1 {
-  --multiplier-fs: calc((var(--font-size-heading-lg) - var(--font-size-heading-md)) / var(--stepdown-2));
-  --heading-fs: clamp(var(--font-size-heading-md), calc(var(--font-size-heading-md) + var(--available-2) * var(--multiplier-fs)), var(--font-size-heading-lg));
-  font-size: var(--heading-fs);
+  font-size: clamp(var(--font-size-heading-md), var(--font-size-heading-md) + var(--available-2) * (var(--font-size-heading-lg) - var(--font-size-heading-md)) / var(--stepdown-2), var(--font-size-heading-lg));
   color: var(--color-stone-900);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-heading);
@@ -181,12 +179,10 @@ h2 {
 }
 
 body {
-  --multiplier-fs: calc((var(--font-size-body) - var(--font-size-body-mob)) / var(--stepdown-2));
-  --body-fs: clamp(var(--font-size-body-mob), calc(var(--font-size-body-mob) + var(--available-2) * var(--multiplier-fs)), var(--font-size-body));
   color: var(--color-stone-600);
   background-color: var(--color-stone-100);
   font-family: "Outfit", sans-serif;
-  font-size: var(--body-fs);
+  font-size: clamp(var(--font-size-body-mob), var(--font-size-body-mob) + var(--available-2) * (var(--font-size-body) - var(--font-size-body-mob)) / var(--stepdown-2), var(--font-size-body));
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-body);
 }
@@ -203,18 +199,8 @@ body {
 }
 
 .card {
-  --multiplier-card-radius: calc(var(--radius-card) / var(--stepdown-1));
-  --card-radius: clamp(
-    0rem,
-    calc(var(--available-1) * var(--multiplier-card-radius)),
-    var(--radius-card)
-  );
-  --multiplier-card-margin: calc(var(--spacing-8) / var(--stepdown-1));
-  --card-margin: clamp(
-    0rem,
-    calc(var(--available-1) * var(--multiplier-card-margin)),
-    var(--spacing-8)
-  );
+  --card-radius: clamp(0rem, var(--available-1) * var(--radius-card) / var(--stepdown-1), var(--radius-card));
+  --card-margin: clamp(0rem, var(--available-1) * var(--spacing-8) / var(--stepdown-1), var(--spacing-8));
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -225,18 +211,8 @@ body {
   background-color: var(--color-white);
 }
 .card .hero-image {
-  --multiplier-hero-inline-space: calc(var(--spacing-8) / var(--stepdown-1));
-  --hero-inline-space: clamp(
-    0rem,
-    calc(var(--available-1) * var(--multiplier-hero-inline-space)),
-    var(--spacing-8)
-  );
-  --multiplier-hero-radius: calc(var(--radius-hero) / var(--stepdown-1));
-  --hero-radius: clamp(
-    0rem,
-    calc(var(--available-1) * var(--multiplier-hero-radius)),
-    var(--radius-hero)
-  );
+  --hero-inline-space: clamp(0rem, var(--available-1) * var(--spacing-8) / var(--stepdown-1), var(--spacing-8));
+  --hero-radius: clamp(0rem, var(--available-1) * var(--radius-hero) / var(--stepdown-1), var(--radius-hero));
   margin-inline: var(--hero-inline-space);
   margin-block-start: var(--hero-inline-space);
   margin-block-end: var(--spacing-8);

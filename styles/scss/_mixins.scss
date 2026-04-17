@@ -1,8 +1,0 @@
-@mixin fluid-custom-prop($name, $max-token, $available-token, $stepdown-token, $min: 0rem) {
-  --multiplier-#{$name}: calc(var(#{$max-token}) / var(#{$stepdown-token}));
-  --#{$name}: clamp(
-    #{$min},
-    calc(var(#{$available-token}) * var(--multiplier-#{$name})),
-    var(#{$max-token})
-  );
-}

@@ -1,12 +1,16 @@
-body {
-  --multiplier-fs: calc((var(--font-size-body) - var(--font-size-body-mob)) / var(--stepdown-2));
-  --body-fs: clamp(var(--font-size-body-mob), calc(var(--font-size-body-mob) + var(--available-2) * var(--multiplier-fs)), var(--font-size-body));
+@use "functions";
 
+body {
   color: var(--color-stone-600);
   background-color: var(--color-stone-100);
 
   font-family: "Outfit", sans-serif;
-  font-size: var(--body-fs);
+  font-size: functions.fluid-between(
+    "--font-size-body-mob",
+    "--font-size-body",
+    "--available-2",
+    "--stepdown-2"
+  );
   font-weight: var(--font-weight-regular);
   
   line-height: var(--line-height-body);

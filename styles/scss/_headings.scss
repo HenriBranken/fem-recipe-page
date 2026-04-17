@@ -1,12 +1,17 @@
+@use "functions";
+
 h1,
 h2 {
   font-family: "Young Serif", serif;
 }
 
 h1 {
-  --multiplier-fs: calc((var(--font-size-heading-lg) - var(--font-size-heading-md)) / var(--stepdown-2));
-  --heading-fs: clamp(var(--font-size-heading-md), calc(var(--font-size-heading-md) + var(--available-2) * var(--multiplier-fs)), var(--font-size-heading-lg));
-  font-size: var(--heading-fs);
+  font-size: functions.fluid-between(
+    "--font-size-heading-md",
+    "--font-size-heading-lg",
+    "--available-2",
+    "--stepdown-2"
+  );
 
   color: var(--color-stone-900);
   font-weight: var(--font-weight-bold);

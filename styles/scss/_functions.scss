@@ -1,0 +1,24 @@
+@function fluid($max-token, $available-token, $stepdown-token, $min: 0rem) {
+  @return clamp(
+    #{$min},
+    calc(
+      var(#{$available-token}) *
+      calc(var(#{$max-token}) / var(#{$stepdown-token}))
+    ),
+    var(#{$max-token})
+  );
+}
+
+@function fluid-between($min-token, $max-token, $available-token, $stepdown-token) {
+  @return clamp(
+    var(#{$min-token}),
+    calc(
+      var(#{$min-token}) +
+      var(#{$available-token}) *
+      calc(
+        (var(#{$max-token}) - var(#{$min-token})) / var(#{$stepdown-token})
+      )
+    ),
+    var(#{$max-token})
+  );
+}
