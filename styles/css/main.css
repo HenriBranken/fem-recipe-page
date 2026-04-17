@@ -86,28 +86,53 @@ select {
   --width-card-mobile: 23.4375rem;
   /* List Specs */
   --width-bullet: 0.25rem;
-  --bullet-inline-offset: 0.2rem;
+  --bullet-inline-offset: 0.25rem;
   --bullet-top-offset: 0.75em;
 }
 
-.preparation-list li {
+.preparation-list li, .ingredients-list li, .instructions-list li {
   position: relative;
-  padding-inline-start: calc(var(--bullet-inline-offset) + var(--bullet-top-offset) + var(--spacing-3));
 }
-.preparation-list li + li {
+.preparation-list li + li, .ingredients-list li + li, .instructions-list li + li {
   margin-block-start: var(--spacing-1);
 }
 
-.preparation-list li::before {
-  content: "";
+.preparation-list li::before, .ingredients-list li::before, .instructions-list li::before {
   position: absolute;
   inset-inline-start: var(--bullet-inline-offset);
   top: var(--bullet-top-offset);
+  transform: translateY(-50%);
+}
+
+.preparation-list li::before, .ingredients-list li::before {
+  content: "";
   width: var(--width-bullet);
   height: var(--width-bullet);
   border-radius: 50%;
   background-color: currentColor;
-  transform: translateY(-50%);
+}
+
+.instructions-list li::before {
+  content: counter(instruction) ".";
+  color: var(--color-brown-800);
+  font-weight: var(--font-weight-semibold);
+}
+
+.ingredients-list li::before {
+  border-radius: 0%;
+}
+
+.instructions-list {
+  counter-reset: instruction;
+}
+
+.preparation-list li, .ingredients-list li {
+  padding-inline-start: calc(var(--bullet-inline-offset) + var(--width-bullet) + var(--spacing-3));
+}
+
+.instructions-list li {
+  counter-increment: instruction;
+  padding-inline-start: calc(var(--bullet-inline-offset) + 2ch + var(--spacing-3));
 }
 
 h1,
@@ -155,8 +180,8 @@ body {
 }
 
 hr {
-  border-top: 1px solid var(--color-stone-600);
-  margin-block: var(--spacing-4);
+  border-top: 1px solid var(--color-stone-100);
+  margin-block: var(--spacing-5);
   width: 100%;
 }
 

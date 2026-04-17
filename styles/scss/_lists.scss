@@ -1,20 +1,52 @@
-.preparation-list li {
+// Shared list item layout
+.preparation-list li, .ingredients-list li, .instructions-list li {
   position: relative;
-  padding-inline-start: calc(var(--bullet-inline-offset) + var(--bullet-top-offset) + var(--spacing-3));
-
   & + li {
     margin-block-start: var(--spacing-1);
   }
 }
 
-.preparation-list li::before {
-  content: "";
+// Shared marker positioning
+.preparation-list li::before, .ingredients-list li::before, .instructions-list li::before {
   position: absolute;
   inset-inline-start: var(--bullet-inline-offset);
   top: var(--bullet-top-offset);
+  transform: translateY(-50%);
+}
+
+// Bullet markers for unordered lists
+.preparation-list li::before, .ingredients-list li::before {
+  content: "";
   width: var(--width-bullet);
   height: var(--width-bullet);
   border-radius: 50%;
   background-color: currentColor;
-  transform: translateY(-50%);
+}
+
+// Numbered markers for the instructions list
+.instructions-list li::before {
+  content: counter(instruction) ".";
+  color: var(--color-brown-800);
+  font-weight: var(--font-weight-semibold);
+}
+
+// Ingredients list uses square bullets
+.ingredients-list li::before {
+  border-radius: 0%;
+}
+
+// Counter setup for the ordered list
+.instructions-list {
+  counter-reset: instruction;
+}
+
+// Text spacing for unordered lists
+.preparation-list li, .ingredients-list li {
+  padding-inline-start: calc(var(--bullet-inline-offset) + var(--width-bullet) + var(--spacing-3));
+}
+
+// Text spacing and counter increment for the ordered list
+.instructions-list li {
+  counter-increment: instruction;
+  padding-inline-start: calc(var(--bullet-inline-offset) + 2ch + var(--spacing-3));
 }
