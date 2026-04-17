@@ -35,3 +35,15 @@ hr {
   margin-block: var(--spacing-4);
   width: 100%;
 }
+
+.preparation {
+  background-color: var(--color-rose-50);
+  border-radius: var(--radius-hero);
+  padding: var(--spacing-5);
+  margin: var(--spacing-5) 0;
+
+  .preparation-title {
+    color: var(--color-rose-800);
+    margin-block-end: var(--spacing-3);
+  }
+}
