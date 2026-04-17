@@ -58,5 +58,8 @@
 
   /* viewport range */
   --viewport-range: calc(46rem - 41rem);
-  --availability: calc(100vw - 41rem);
+  --available-1: calc(100vw - 41rem);
+
+  --stepdown-2: calc(41rem - 23.4375rem);
+  --available-2: calc(100vw - 23.4375rem);
 }

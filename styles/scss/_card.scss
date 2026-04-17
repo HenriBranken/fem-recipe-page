@@ -14,8 +14,8 @@ body {
   --multiplier-radius: calc(var(--radius-card) / var(--viewport-range));
   --multiplier-margin: calc(var(--spacing-8) / var(--viewport-range));
 
-  --card-radius: clamp(0rem, calc(var(--availability) * var(--multiplier-radius)), var(--radius-card));
-  --card-margin: clamp(0rem, calc(var(--availability) * var(--multiplier-margin)), var(--spacing-8));
+  --card-radius: clamp(0rem, calc(var(--available-1) * var(--multiplier-radius)), var(--radius-card));
+  --card-margin: clamp(0rem, calc(var(--available-1) * var(--multiplier-margin)), var(--spacing-8));
 
   display: flex;
   flex-direction: column;
@@ -33,8 +33,8 @@ body {
     --multiplier-radius: calc(var(--radius-hero) / var(--viewport-range));
     --multiplier-margin: calc(var(--spacing-8) / var(--viewport-range));
 
-    --hero-inline-space: clamp(0rem, calc(var(--availability) * var(--multiplier-margin)), var(--spacing-8));
-    --hero-radius: clamp(0rem, calc(var(--availability) * var(--multiplier-radius)), var(--radius-hero));
+    --hero-inline-space: clamp(0rem, calc(var(--available-1) * var(--multiplier-margin)), var(--spacing-8));
+    --hero-radius: clamp(0rem, calc(var(--available-1) * var(--multiplier-radius)), var(--radius-hero));
 
     margin-inline: var(--hero-inline-space);
     margin-block-start: var(--hero-inline-space);

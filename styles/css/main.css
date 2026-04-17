@@ -90,7 +90,9 @@ select {
   --bullet-top-offset: 0.75em;
   /* viewport range */
   --viewport-range: calc(46rem - 41rem);
-  --availability: calc(100vw - 41rem);
+  --available-1: calc(100vw - 41rem);
+  --stepdown-2: calc(41rem - 23.4375rem);
+  --available-2: calc(100vw - 23.4375rem);
 }
 
 .preparation-list li, .ingredients-list li, .instructions-list li {
@@ -189,8 +191,8 @@ body {
 .card {
   --multiplier-radius: calc(var(--radius-card) / var(--viewport-range));
   --multiplier-margin: calc(var(--spacing-8) / var(--viewport-range));
-  --card-radius: clamp(0rem, calc(var(--availability) * var(--multiplier-radius)), var(--radius-card));
-  --card-margin: clamp(0rem, calc(var(--availability) * var(--multiplier-margin)), var(--spacing-8));
+  --card-radius: clamp(0rem, calc(var(--available-1) * var(--multiplier-radius)), var(--radius-card));
+  --card-margin: clamp(0rem, calc(var(--available-1) * var(--multiplier-margin)), var(--spacing-8));
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -203,8 +205,8 @@ body {
 .card .hero-image {
   --multiplier-radius: calc(var(--radius-hero) / var(--viewport-range));
   --multiplier-margin: calc(var(--spacing-8) / var(--viewport-range));
-  --hero-inline-space: clamp(0rem, calc(var(--availability) * var(--multiplier-margin)), var(--spacing-8));
-  --hero-radius: clamp(0rem, calc(var(--availability) * var(--multiplier-radius)), var(--radius-hero));
+  --hero-inline-space: clamp(0rem, calc(var(--available-1) * var(--multiplier-margin)), var(--spacing-8));
+  --hero-radius: clamp(0rem, calc(var(--available-1) * var(--multiplier-radius)), var(--radius-hero));
   margin-inline: var(--hero-inline-space);
   margin-block-start: var(--hero-inline-space);
   margin-block-end: var(--spacing-8);
