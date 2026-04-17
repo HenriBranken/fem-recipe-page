@@ -4,10 +4,11 @@ h2 {
 }
 
 h1 {
-  color: var(--color-stone-900);
+  --multiplier-fs: calc((var(--font-size-heading-lg) - var(--font-size-heading-md)) / var(--stepdown-2));
+  --heading-fs: clamp(var(--font-size-heading-md), calc(var(--font-size-heading-md) + var(--available-2) * var(--multiplier-fs)), var(--font-size-heading-lg));
+  font-size: var(--heading-fs);
 
-  font-size: var(--font-size-heading-lg);
-  // font-size: 2rem;
+  color: var(--color-stone-900);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-heading);
 

@@ -1,11 +1,14 @@
 @use "headings";
 
 body {
+  --multiplier-fs: calc((var(--font-size-body) - var(--font-size-body-mob)) / var(--stepdown-2));
+  --body-fs: clamp(var(--font-size-body-mob), calc(var(--font-size-body-mob) + var(--available-2) * var(--multiplier-fs)), var(--font-size-body));
+
   color: var(--color-stone-600);
   background-color: var(--color-stone-100);
 
   font-family: "Outfit", sans-serif;
-  font-size: var(--font-size-body);
+  font-size: var(--body-fs);
   
   line-height: var(--line-height-body);
 }
