@@ -190,14 +190,18 @@ body {
   max-width: var(--width-card-desktop);
   width: 100%;
   margin: var(--spacing-8) auto;
-  padding: var(--spacing-8);
   border-radius: var(--radius-card);
   background-color: var(--color-white);
 }
-.card .hero-image {
-  border-radius: var(--radius-hero);
-  width: var(--width-hero-desktop);
-  margin-block-end: var(--spacing-7);
+@media (min-width: 46rem) {
+  .card .hero-image {
+    margin: var(--spacing-8);
+    border-radius: var(--radius-hero);
+    max-width: var(--width-hero-desktop);
+  }
+}
+.card .recipe-body {
+  padding: 0 var(--spacing-8) var(--spacing-8);
 }
 
 hr {
