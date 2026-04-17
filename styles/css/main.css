@@ -203,10 +203,18 @@ body {
 }
 
 .card {
-  --multiplier-radius: calc(var(--radius-card) / var(--stepdown-1));
-  --multiplier-margin: calc(var(--spacing-8) / var(--stepdown-1));
-  --card-radius: clamp(0rem, calc(var(--available-1) * var(--multiplier-radius)), var(--radius-card));
-  --card-margin: clamp(0rem, calc(var(--available-1) * var(--multiplier-margin)), var(--spacing-8));
+  --multiplier-card-radius: calc(var(--radius-card) / var(--stepdown-1));
+  --card-radius: clamp(
+    0rem,
+    calc(var(--available-1) * var(--multiplier-card-radius)),
+    var(--radius-card)
+  );
+  --multiplier-card-margin: calc(var(--spacing-8) / var(--stepdown-1));
+  --card-margin: clamp(
+    0rem,
+    calc(var(--available-1) * var(--multiplier-card-margin)),
+    var(--spacing-8)
+  );
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -217,19 +225,22 @@ body {
   background-color: var(--color-white);
 }
 .card .hero-image {
-  --multiplier-radius: calc(var(--radius-hero) / var(--stepdown-1));
-  --multiplier-margin: calc(var(--spacing-8) / var(--stepdown-1));
-  --hero-inline-space: clamp(0rem, calc(var(--available-1) * var(--multiplier-margin)), var(--spacing-8));
-  --hero-radius: clamp(0rem, calc(var(--available-1) * var(--multiplier-radius)), var(--radius-hero));
+  --multiplier-hero-inline-space: calc(var(--spacing-8) / var(--stepdown-1));
+  --hero-inline-space: clamp(
+    0rem,
+    calc(var(--available-1) * var(--multiplier-hero-inline-space)),
+    var(--spacing-8)
+  );
+  --multiplier-hero-radius: calc(var(--radius-hero) / var(--stepdown-1));
+  --hero-radius: clamp(
+    0rem,
+    calc(var(--available-1) * var(--multiplier-hero-radius)),
+    var(--radius-hero)
+  );
   margin-inline: var(--hero-inline-space);
   margin-block-start: var(--hero-inline-space);
   margin-block-end: var(--spacing-8);
   border-radius: var(--hero-radius);
-}
-@media (min-width: 46rem) {
-  .card .hero-image {
-    max-width: var(--width-hero-desktop);
-  }
 }
 .card .recipe-body {
   padding: 0 var(--spacing-8) var(--spacing-8);

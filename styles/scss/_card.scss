@@ -1,9 +1,8 @@
-.card {
-  --multiplier-radius: calc(var(--radius-card) / var(--stepdown-1));
-  --multiplier-margin: calc(var(--spacing-8) / var(--stepdown-1));
+@use "mixins";
 
-  --card-radius: clamp(0rem, calc(var(--available-1) * var(--multiplier-radius)), var(--radius-card));
-  --card-margin: clamp(0rem, calc(var(--available-1) * var(--multiplier-margin)), var(--spacing-8));
+.card {
+  @include mixins.fluid-custom-prop("card-radius", "--radius-card", "--available-1", "--stepdown-1");
+  @include mixins.fluid-custom-prop("card-margin", "--spacing-8", "--available-1", "--stepdown-1");
 
   display: flex;
   flex-direction: column;
@@ -18,21 +17,14 @@
   background-color: var(--color-white);
 
   .hero-image {
-    --multiplier-radius: calc(var(--radius-hero) / var(--stepdown-1));
-    --multiplier-margin: calc(var(--spacing-8) / var(--stepdown-1));
-
-    --hero-inline-space: clamp(0rem, calc(var(--available-1) * var(--multiplier-margin)), var(--spacing-8));
-    --hero-radius: clamp(0rem, calc(var(--available-1) * var(--multiplier-radius)), var(--radius-hero));
+    @include mixins.fluid-custom-prop("hero-inline-space", "--spacing-8", "--available-1", "--stepdown-1");
+    @include mixins.fluid-custom-prop("hero-radius", "--radius-hero", "--available-1", "--stepdown-1");
 
     margin-inline: var(--hero-inline-space);
     margin-block-start: var(--hero-inline-space);
     margin-block-end: var(--spacing-8);
 
     border-radius: var(--hero-radius);
-
-    @media (min-width: 46rem) {
-      max-width: var(--width-hero-desktop);
-    }
   }
 
   .recipe-body {
