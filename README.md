@@ -36,7 +36,7 @@ I needed to build a responsive recipe page that matched the supplied design as c
 ### Links
 
 - Solution URL: [GitHub repository](https://github.com/HenriBranken/fem-recipe-page)
-- Live Site URL: I have not deployed this project yet.
+- Live Site URL: [GitHub Pages](https://henribranken.github.io/fem-recipe-page)
 
 ## My process
 
